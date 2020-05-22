@@ -1,0 +1,303 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: black;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Heading Section */
+.heading {
+  background: #292929;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+header h1 {
+  color: #fff;
+  font-size: 34px;
+  padding-top: 10px;
+}
+.heading img {
+  height: 40px;
+  width: 40px;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+/* main Section */
+.main_content {
+  display: grid;
+  grid-template-columns: 1fr 5fr 2fr;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.social_media img {
+  height: 50px;
+  width: 50px;
+}
+
+.social_media_buttons {
+  background: #c4c4c4;
+  height: 58px;
+  width: 100px;
+  margin-top: 50px;
+  cursor: pointer;
+}
+.social_media_buttons img {
+  margin-left: 40px;
+  margin-top: 5px;
+}
+
+.switch_button {
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  background: #c0c0c0;
+  cursor: pointer;
+  margin: 5px 30px 10px 0px;
+}
+.button_section {
+  display: flex;
+  justify-content: center;
+}
+
+.beat_button_container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.beat_button_row {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.beat_button {
+  height: 40px;
+  width: 44px;
+  border-radius: 10%;
+  background: #c6bcbc;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.beat_container {
+  width: 300px;
+}
+
+.beat_container select {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 10px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid white;
+  color: #fff;
+  cursor: pointer;
+}
+
+.beat_container select option {
+  background: black;
+  color: #fff;
+}
+
+/* Footer Section */
+.bottom_container {
+  background: #292929;
+}
+
+.control_section {
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+  margin-left: 270px;
+}
+.play_button img {
+  height: 45px;
+  width: 45px;
+  cursor: pointer;
+}
+.pause_button img {
+  height: 40px;
+  width: 40px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.volume_button {
+  display: flex;
+  margin-left: 40px;
+}
+.volume_button img {
+  height: 40px;
+  width: 40px;
+}
+
+.volume_button .slidecontainer input {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.speed_button {
+  width: 500px;
+  color: #fff;
+  display: flex;
+  width: 500px;
+  margin: 10px 0 0 250px;
+}
+
+.speed_button span {
+  margin-right: 5px;
+}
+
+.speed_button .slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: rgb(240, 255, 31);
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: rgb(240, 255, 31);
+  cursor: pointer;
+}
+
+.final_lines {
+  color: #fff;
+  text-align: center;
+}
+
+.final_lines h5 {
+  font-weight: 100;
+}
+.final_lines h6 {
+  color: #959595;
+}
+
+/* COLOUR THEME */
+.overlay {
+  position: relative;
+  top: -61.5px;
+  opacity: 0;
+  transition: 0.1s ease;
+}
+
+.social_media_buttons:hover .overlay {
+  opacity: 1;
+}
+
+.active_line1 {
+  background: #fe6363;
+}
+
+.active_line2 {
+  background: #fb975f;
+}
+.active_line3 {
+  background: #ffee59;
+}
+.active_line4 {
+  background: #82fd49;
+}
+.active_line5 {
+  background: #6cf5dd;
+}
+.active_line6 {
+  background: #4db4ff;
+}
+.active_line7 {
+  background: #8146ff;
+}
+.active_line8 {
+  background: #cd62ff;
+}
+.active_line9 {
+  background: #ff88ec;
+}
+.active_line10 {
+  background: #ff5b96;
+}
+
+.line1 {
+  border: 5px #fe6363 solid;
+  background: none;
+}
+
+.line2 {
+  border: 5px #fb975f solid;
+  background: none;
+}
+.line3 {
+  border: 5px #ffee59 solid;
+  background: none;
+}
+.line4 {
+  border: 5px #82fd49 solid;
+  background: none;
+}
+.line5 {
+  border: 5px #6cf5dd solid;
+  background: none;
+}
+.line6 {
+  border: 5px #4db4ff solid;
+  background: none;
+}
+.line7 {
+  border: 5px #8146ff solid;
+  background: none;
+}
+.line8 {
+  border: 5px #cd62ff solid;
+  background: none;
+}
+.line9 {
+  border: 5px #ff88ec solid;
+  background: none;
+}
+.line10 {
+  border: 5px #ff5b96 solid;
+  background: none;
+}
+
+.deactivate {
+  background: #c4c4c4;
+  pointer-events: none;
+}
+
+.forAnimation {
+  border: rgb(0, 255, 64) 5px solid;
+}
+
+.play_button_active {
+  border: rgb(240, 255, 31) 10px solid;
+  border-radius: 100%;
+}
