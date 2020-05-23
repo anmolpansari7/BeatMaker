@@ -453,7 +453,7 @@ header h1 {
     height: 30px;
   }
   .final_lines {
-    margin-top: 100px;
+    margin-top: 80px;
     font-size: 10px;
   }
   .instructions {
@@ -461,10 +461,15 @@ header h1 {
     position: relative;
     margin: 50px 20px 20px 20px;
     color: white;
-    font-size: 10px;
+    font-size: 12px;
   }
   .instructions p {
-    font-size: 8px;
+    font-size: 10px;
+    line-height: 1.5;
     color: rgb(190, 190, 190);
+  }
+  .instructions a {
+    color: rgb(53, 163, 199);
+    font-size: 12px;
   }
 }
