@@ -305,6 +305,10 @@ header h1 {
   border-radius: 100%;
 }
 
+.instructions {
+  display: none;
+}
+
 @media screen and (max-width: 767px) {
   /* heading section */
   .heading {
@@ -340,7 +344,7 @@ header h1 {
   .switch_button {
     height: 28px;
     width: 28px;
-    margin: 5px 10px 8px 20px;
+    margin: 5px 20px 8px 25px;
   }
   .beat_button_row {
     height: fit-content;
@@ -354,7 +358,7 @@ header h1 {
     display: none;
   }
   .beat_container {
-    width: 70px;
+    width: 75px;
   }
 
   .beat_container select {
@@ -364,13 +368,13 @@ header h1 {
 
   /* footer section */
   .bottom_container {
-    height: 150px;
+    height: 325px;
   }
 
   .control_section {
     display: flex;
     flex-direction: row;
-    padding-top: 10px;
+    padding-top: 20px;
     margin-left: 20px;
   }
   .play_button img {
@@ -435,7 +439,7 @@ header h1 {
     width: fit-content;
     display: flex;
     position: relative;
-    top: 8px;
+    top: 20px;
     left: 5px;
   }
 
@@ -449,8 +453,18 @@ header h1 {
     height: 30px;
   }
   .final_lines {
-    position: relative;
-    top: 25px;
+    margin-top: 100px;
     font-size: 10px;
+  }
+  .instructions {
+    display: inline-block;
+    position: relative;
+    margin: 50px 20px 20px 20px;
+    color: white;
+    font-size: 10px;
+  }
+  .instructions p {
+    font-size: 8px;
+    color: rgb(190, 190, 190);
   }
 }
