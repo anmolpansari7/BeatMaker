@@ -529,29 +529,53 @@ let OptionLine8 = selectedBeatLine8();
 let OptionLine9 = selectedBeatLine9();
 let OptionLine10 = selectedBeatLine10();
 
-// Commenting out the Tone js Player Because of the Problems in selcting the Options from the list.
+const audio = document.querySelector("audio");
+const actx = Tone.context;
+const dest = actx.createMediaStreamDestination();
+const recorder = new MediaRecorder(dest.stream);
 
-// let ToneLine1 = new Tone.Player("./media/Samples/" + OptionLine1 + ".wav");
-// ToneLine1.toMaster();
+// !!!!!!!!!!!!! Error !!!!!!!!!!!!!!!!!!//
+// See how to update the Tone.Player source as this is not supporting the options that are on the right side of the screen.
 
-// let ToneLine2 = new Tone.Player("./media/Samples/" + OptionLine2 + ".wav");
-// ToneLine2.toMaster();
-// let ToneLine3 = new Tone.Player("./media/Samples/" + OptionLine3 + ".wav");
-// ToneLine3.toMaster();
-// let ToneLine4 = new Tone.Player("./media/Samples/" + OptionLine4 + ".wav");
-// ToneLine4.toMaster();
-// let ToneLine5 = new Tone.Player("./media/Samples/" + OptionLine5 + ".wav");
-// ToneLine5.toMaster();
-// let ToneLine6 = new Tone.Player("./media/Samples/" + OptionLine6 + ".wav");
-// ToneLine6.toMaster();
-// let ToneLine7 = new Tone.Player("./media/Samples/" + OptionLine7 + ".wav");
-// ToneLine7.toMaster();
-// let ToneLine8 = new Tone.Player("./media/Samples/" + OptionLine8 + ".wav");
-// ToneLine8.toMaster();
-// let ToneLine9 = new Tone.Player("./media/Samples/" + OptionLine9 + ".wav");
-// ToneLine9.toMaster();
-// let ToneLine10 = new Tone.Player("./media/Samples/" + OptionLine10 + ".wav");
-// ToneLine10.toMaster();
+let ToneLine1 = new Tone.Player("./media/Samples/" + OptionLine1 + ".wav");
+ToneLine1.connect(dest);
+ToneLine1.toMaster();
+
+let ToneLine2 = new Tone.Player("./media/Samples/" + OptionLine2 + ".wav");
+ToneLine2.connect(dest);
+ToneLine2.toMaster();
+
+let ToneLine3 = new Tone.Player("./media/Samples/" + OptionLine3 + ".wav");
+ToneLine3.connect(dest);
+ToneLine3.toMaster();
+
+let ToneLine4 = new Tone.Player("./media/Samples/" + OptionLine4 + ".wav");
+ToneLine4.connect(dest);
+ToneLine4.toMaster();
+
+let ToneLine5 = new Tone.Player("./media/Samples/" + OptionLine5 + ".wav");
+ToneLine5.connect(dest);
+ToneLine5.toMaster();
+
+let ToneLine6 = new Tone.Player("./media/Samples/" + OptionLine6 + ".wav");
+ToneLine6.connect(dest);
+ToneLine6.toMaster();
+
+let ToneLine7 = new Tone.Player("./media/Samples/" + OptionLine7 + ".wav");
+ToneLine7.connect(dest);
+ToneLine7.toMaster();
+
+let ToneLine8 = new Tone.Player("./media/Samples/" + OptionLine8 + ".wav");
+ToneLine8.connect(dest);
+ToneLine8.toMaster();
+
+let ToneLine9 = new Tone.Player("./media/Samples/" + OptionLine9 + ".wav");
+ToneLine9.connect(dest);
+ToneLine9.toMaster();
+
+let ToneLine10 = new Tone.Player("./media/Samples/" + OptionLine10 + ".wav");
+ToneLine10.connect(dest);
+ToneLine10.toMaster();
 
 function sequencerAnimation(i, line) {
   line[i].classList.add("forAnimation");
@@ -561,11 +585,31 @@ function sequencerAnimation(i, line) {
 }
 
 let i = 0;
+let note = "13n";
+let noOfButtons = 13;
 
-Tone.Transport.scheduleRepeat(repeat, "13n");
+function myFunction(x) {
+  if (x.matches) {
+    // If media query matches
+    noOfButtons = 5;
+    note = "5n";
+  } else {
+    noOfButtons = 13;
+    note = "13n";
+  }
+}
+
+var x = window.matchMedia("(max-width: 360px)");
+myFunction(x); // Call listener function at run time
+x.addListener(myFunction); // Attach listener function on state changes
+
+Tone.Transport.scheduleRepeat(repeat, note);
 
 function repeat() {
-  let step = i % 13;
+  if (i === 0) {
+    recorder.start();
+  }
+  let step = i % noOfButtons;
   sequencerAnimation(step, BeatButtonLine1);
   sequencerAnimation(step, BeatButtonLine2);
   sequencerAnimation(step, BeatButtonLine3);
@@ -577,54 +621,54 @@ function repeat() {
   sequencerAnimation(step, BeatButtonLine9);
   sequencerAnimation(step, BeatButtonLine10);
   if (arrayLine1.includes(step)) {
-    // ToneLine1.start();
-    OptionLine1 = selectedBeatLine1();
-    playSoundLine1(OptionLine1);
+    ToneLine1.start();
+    // OptionLine1 = selectedBeatLine1();
+    // playSoundLine1(OptionLine1);
   }
   if (arrayLine2.includes(step)) {
-    // ToneLine2.start();
-    OptionLine2 = selectedBeatLine2();
-    playSoundLine2(OptionLine2);
+    ToneLine2.start();
+    // OptionLine2 = selectedBeatLine2();
+    // playSoundLine2(OptionLine2);
   }
   if (arrayLine3.includes(step)) {
-    // ToneLine3.start();
-    OptionLine3 = selectedBeatLine3();
-    playSoundLine3(OptionLine3);
+    ToneLine3.start();
+    // OptionLine3 = selectedBeatLine3();
+    // playSoundLine3(OptionLine3);
   }
   if (arrayLine4.includes(step)) {
-    // ToneLine4.start();
-    OptionLine4 = selectedBeatLine4();
-    playSoundLine4(OptionLine4);
+    ToneLine4.start();
+    // OptionLine4 = selectedBeatLine4();
+    // playSoundLine4(OptionLine4);
   }
   if (arrayLine5.includes(step)) {
-    // ToneLine5.start();
-    OptionLine5 = selectedBeatLine5();
-    playSoundLine5(OptionLine5);
+    ToneLine5.start();
+    // OptionLine5 = selectedBeatLine5();
+    // playSoundLine5(OptionLine5);
   }
   if (arrayLine6.includes(step)) {
-    // ToneLine6.start();
-    OptionLine6 = selectedBeatLine6();
-    playSoundLine6(OptionLine6);
+    ToneLine6.start();
+    // OptionLine6 = selectedBeatLine6();
+    // playSoundLine6(OptionLine6);
   }
   if (arrayLine7.includes(step)) {
-    // ToneLine7.start();
-    OptionLine7 = selectedBeatLine7();
-    playSoundLine7(OptionLine7);
+    ToneLine7.start();
+    // OptionLine7 = selectedBeatLine7();
+    // playSoundLine7(OptionLine7);
   }
   if (arrayLine8.includes(step)) {
-    // ToneLine8.start();
-    OptionLine8 = selectedBeatLine8();
-    playSoundLine8(OptionLine8);
+    ToneLine8.start();
+    // OptionLine8 = selectedBeatLine8();
+    // playSoundLine8(OptionLine8);
   }
   if (arrayLine9.includes(step)) {
-    // ToneLine9.start();
-    OptionLine9 = selectedBeatLine9();
-    playSoundLine9(OptionLine9);
+    ToneLine9.start();
+    // OptionLine9 = selectedBeatLine9();
+    // playSoundLine9(OptionLine9);
   }
   if (arrayLine10.includes(step)) {
-    // ToneLine10.start();
-    OptionLine10 = selectedBeatLine10();
-    playSoundLine10(OptionLine10);
+    ToneLine10.start();
+    // OptionLine10 = selectedBeatLine10();
+    // playSoundLine10(OptionLine10);
   }
   i++;
 }
@@ -647,6 +691,7 @@ PauseButton.addEventListener("click", () => {
     PlayButton.classList.remove("play_button_active");
   }
   PauseButton.classList.add("play_button_active");
+  recorder.stop();
 });
 
 function tempoSet() {
@@ -656,4 +701,30 @@ function tempoSet() {
 
 function volSet() {
   console.log(volumeControl.value);
+}
+
+//////////////////////////////////////////////////////////////////
+
+// const audio = document.querySelector("audio");
+// const actx = Tone.context;
+// const dest = actx.createMediaStreamDestination();
+// const recorder = new MediaRecorder(dest.stream);
+
+// ToneLine1.connect(dest);
+// ToneLine1.toMaster();
+
+const chunks = [];
+
+recorder.ondataavailable = (evt) => chunks.push(evt.data);
+recorder.onstop = (evt) => {
+  let blob = new Blob(chunks, { type: "audio/ogg; codecs=opus" });
+  audio.src = URL.createObjectURL(blob);
+};
+
+$(".social_media_buttons").click(() => {
+  NewTab();
+});
+
+function NewTab() {
+  window.open(audio.src, "_blank");
 }

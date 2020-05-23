@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -122,7 +123,7 @@
                 <div class="beat_button beat_button_line9"></div>
                 <div class="beat_button beat_button_line10"></div>
             </div>
-            <div class="beat_button_row">
+            <div class="beat_button_row not_in_mobile">
                 <div class="beat_button beat_button_line1"></div>
                 <div class="beat_button beat_button_line2"></div>
                 <div class="beat_button beat_button_line3"></div>
@@ -134,7 +135,7 @@
                 <div class="beat_button beat_button_line9"></div>
                 <div class="beat_button beat_button_line10"></div>
             </div>
-            <div class="beat_button_row">
+            <div class="beat_button_row not_in_mobile">
                 <div class="beat_button beat_button_line1"></div>
                 <div class="beat_button beat_button_line2"></div>
                 <div class="beat_button beat_button_line3"></div>
@@ -146,7 +147,7 @@
                 <div class="beat_button beat_button_line9"></div>
                 <div class="beat_button beat_button_line10"></div>
             </div>
-            <div class="beat_button_row">
+            <div class="beat_button_row not_in_mobile">
                 <div class="beat_button beat_button_line1"></div>
                 <div class="beat_button beat_button_line2"></div>
                 <div class="beat_button beat_button_line3"></div>
@@ -158,7 +159,7 @@
                 <div class="beat_button beat_button_line9"></div>
                 <div class="beat_button beat_button_line10"></div>
             </div>
-            <div class="beat_button_row">
+            <div class="beat_button_row not_in_mobile">
                 <div class="beat_button beat_button_line1"></div>
                 <div class="beat_button beat_button_line2"></div>
                 <div class="beat_button beat_button_line3"></div>
@@ -170,7 +171,7 @@
                 <div class="beat_button beat_button_line9"></div>
                 <div class="beat_button beat_button_line10"></div>
             </div>
-            <div class="beat_button_row">
+            <div class="beat_button_row not_in_mobile">
                 <div class="beat_button beat_button_line1"></div>
                 <div class="beat_button beat_button_line2"></div>
                 <div class="beat_button beat_button_line3"></div>
@@ -182,7 +183,7 @@
                 <div class="beat_button beat_button_line9"></div>
                 <div class="beat_button beat_button_line10"></div>
             </div>
-            <div class="beat_button_row">
+            <div class="beat_button_row not_in_mobile">
                 <div class="beat_button beat_button_line1"></div>
                 <div class="beat_button beat_button_line2"></div>
                 <div class="beat_button beat_button_line3"></div>
@@ -194,7 +195,7 @@
                 <div class="beat_button beat_button_line9"></div>
                 <div class="beat_button beat_button_line10"></div>
             </div>
-            <div class="beat_button_row">
+            <div class="beat_button_row not_in_mobile">
                 <div class="beat_button beat_button_line1"></div>
                 <div class="beat_button beat_button_line2"></div>
                 <div class="beat_button beat_button_line3"></div>
@@ -206,7 +207,7 @@
                 <div class="beat_button beat_button_line9"></div>
                 <div class="beat_button beat_button_line10"></div>
             </div>
-            <div class="beat_button_row">
+            <div class="beat_button_row not_in_mobile">
                    <div class="beat_button beat_button_line1"></div>
                    <div class="beat_button beat_button_line2"></div>
                    <div class="beat_button beat_button_line3"></div>
@@ -300,6 +301,7 @@
                     <option value="perc-chirpy">perc-chirpy</option>
                     <option value="perc-hollow">perc-hollow</option>
                     <option value="perc-metal">perc-metal</option>
+                    <option value="perc-nasty">perc-nasty</option>
                     <option value="perc-short">perc-short</option>
                     <option value="perc-tambo">perc-tambo</option>
                     <option value="perc-tribal">perc-tribal</option>
@@ -331,6 +333,7 @@
                     <option value="snare-electro">snare-electro</option>
                     <option value="snare-lofi01">snare-lofi01</option>
                     <option value="snare-lofi02">snare-lofi02</option>
+                    <option value="snare-modular">snare-modular</option>
                     <option value="snare-nosie">snare-noise</option>
                     <option value="snare-pinch">snare-pinch</option>
                     <option value="snare-punch">snare-punch</option>
@@ -367,19 +370,24 @@
     <div class="pause_button">
         <img class="pause_button_img" src="./images/Pause.svg" alt="Pause">
     </div>
-    <div class="volume_button">
+    <!-- <div class="volume_button">
     <img src="./images/VolumeButton.svg" alt="volume">
     <div class="slidecontainer">
         <input type="range" min="1" max="100" value="50" class="slider" id="volume_control" onchange="volSet(this.value)">
       </div>  
-    </div>
+    </div> -->
     <div class="speed_button">
-        <span> Tempo </span>
+        <h3>Tempo :</h3>
         <div class="slidecontainer">
             <input type="range" min="1" max="100" value="50" class="slider" id="tempo_control" onchange="tempoSet(this.value)">
           </div>  
     </div>
 </div>
+<div class="recorder_section">
+    <h3>Recorder :</h3>
+    <audio controls preload="metadata"></audio>
+</div>
+
 <div class="final_lines">
         <h4>Made with ❤ by ANMOL for you to enjoy.</h4>
         <h6>copywrite 2020.</h6>
